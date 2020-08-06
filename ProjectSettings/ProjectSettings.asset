@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Brackeys Jam 2020.2
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 7bd902ab4a7366648b44e1addfe08e70, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -623,10 +623,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 39f91681-6597-4abb-88e3-eaa68f4d8f19
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Brackeys Jam 2020.2
+  organizationId: adisking1
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

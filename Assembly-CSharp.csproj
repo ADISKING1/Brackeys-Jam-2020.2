@@ -63,10 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BetterJumping.cs" />
-    <Compile Include="Assets\Scripts\Collision.cs" />
-    <Compile Include="Assets\Scripts\Movement.cs" />
-    <Compile Include="Assets\Scripts\SceneReloader.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Scripts\AudioPlayer.cs" />
+    <Compile Include="Assets\Scripts\Init.cs" />
+    <Compile Include="Assets\Scripts\QuestionManager.cs" />
+    <Compile Include="Assets\Scripts\TestAudio.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Unity/Installs/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -249,9 +250,6 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:/Unity/Installs/2019.4.4f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>C:/Unity/Projects/Brackeys Jam 2020.2/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Unity/Installs/2019.4.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -680,12 +678,7 @@
       <HintPath>C:/Unity/Projects/Brackeys Jam 2020.2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{34CF6703-52D0-8BC7-2244-44BCC1F83ACC}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
