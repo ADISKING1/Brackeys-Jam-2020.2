@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine;
+using DG.Tweening;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -18,12 +19,13 @@ public class QuestionManager : MonoBehaviour
     [Space]
     public int CurrentLevel = 0;
     public int Score = 0;
+    public int DisplayScore = 0;
     public static int HighScore;
     public int Point = 10;
 
-    public Text GameOverScoreText;
-    public Text ScoreText;
-    public Text LevelText;
+    public Text Best;
+    public Text[] ScoreText;
+    public Text[] LevelText;
     public Text PointText;
 
     [Space]
@@ -40,6 +42,9 @@ public class QuestionManager : MonoBehaviour
     public AudioClip currentQuestion;
     public string currentAnswer;
     public string playerAnswer;
+
+    [Space]
+    public GameObject[] TextObj = new GameObject[3]; // Point, Score, Level
 
     [Space]
     public Button QButton;
@@ -67,6 +72,8 @@ public class QuestionManager : MonoBehaviour
     {
         ClearOptions();
         CurrentLevel++;
+        TextObj[2].transform.DOComplete();
+        TextObj[2].transform.DOShakePosition(.2f, 4, 14, 90, false, true);
         if (unansweredQuestions.Count != 0)
         {
             int currentQuestionIndex = Random.Range(0, unansweredQuestions.Count);
@@ -133,7 +140,7 @@ public class QuestionManager : MonoBehaviour
         {
             if (Point > 1)
             {
-                PointText.color = Color.Lerp(PointText.color, IncorrectColour, 0.1f);
+                StartCoroutine(PointReduced());
                 Point--;
             }
         }
@@ -152,6 +159,16 @@ public class QuestionManager : MonoBehaviour
             SetOptions();
             timeBtwQ = false;
         }
+    }
+
+    public IEnumerator PointReduced()
+    {
+
+        PointText.color = Color.red;
+        TextObj[0].transform.DOComplete();
+        TextObj[0].transform.DOShakePosition(.2f, 4, 14, 90, false, true);
+        yield return new WaitForSeconds(0.2f);
+        PointText.color = DefaultColour[4];
     }
 
     public void DecisionPending(int Selected)
@@ -218,6 +235,8 @@ public class QuestionManager : MonoBehaviour
         {
             Debug.Log("Correct");
             Score += Point;
+            TextObj[1].transform.DOComplete();
+            TextObj[1].transform.DOShakePosition(.2f, 4, 14, 90, false, true);
             Confetti.Play();
         }
         else
@@ -242,10 +261,11 @@ public class QuestionManager : MonoBehaviour
     {
         if (Score > HighScore)
             HighScore = Score;
-
-        LevelText.text = CurrentLevel.ToString() + " / " + Questions.Length.ToString();
-        ScoreText.text = Score.ToString();
+        foreach (Text LT in  LevelText)
+            LT.text = CurrentLevel.ToString() + " / " + Questions.Length.ToString();
+        foreach (Text ST in ScoreText)
+            ST.text = Score.ToString();
         PointText.text = "+" + Point.ToString();
-        GameOverScoreText.text = "Score: " + Score.ToString() + "\nHighScore: " + HighScore.ToString();
+        Best.text = HighScore.ToString();
     }
 }

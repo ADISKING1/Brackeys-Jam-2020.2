@@ -1,10 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp.dll:
-    - AudioPlayer
-    - GameManager
-    - Init
-    - QuestionManager
+    DOTween.dll:
+    - DG.Tweening.Core.DOTweenSettings
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -29,16 +26,8 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.Button
-    - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
-    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/Game Scene.unity:
+    Assets/Scenes/Bg.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -49,92 +38,27 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11170}
-    - Class: 114
-      Script: {instanceID: 11460}
-    - Class: 114
-      Script: {instanceID: 11514}
-    - Class: 114
-      Script: {instanceID: 11988}
-    - Class: 114
-      Script: {instanceID: 12178}
-    - Class: 114
-      Script: {instanceID: 12294}
-    - Class: 114
-      Script: {instanceID: 12878}
-    - Class: 114
-      Script: {instanceID: 13364}
-    - Class: 114
-      Script: {instanceID: 13642}
-    - Class: 114
-      Script: {instanceID: 14252}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Main Menu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11170}
-    - Class: 114
-      Script: {instanceID: 11514}
-    - Class: 114
-      Script: {instanceID: 12178}
-    - Class: 114
-      Script: {instanceID: 12878}
-    - Class: 114
-      Script: {instanceID: 13556}
-    - Class: 114
-      Script: {instanceID: 13642}
-    - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 12766}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -325,7 +249,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 067af034e93ecf1dc7c711fd4743b3ce
+      Hash: e5e1de8dda9fef2fbacfe324ffc25c9b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QuestionManager
@@ -385,7 +309,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 99446e633d196247b5b391b1989b0317
+      Hash: 899616c13f7ca4bf21076522ae101087
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -419,6 +343,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 704dcd31abc789439bc3f3cd10b58c2b
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 179648033371456981a3c08cb9f47477
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenSettings
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -523,7 +459,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: b9644c843a79d7bb56e8a1c871fc9ddc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Init
@@ -655,6 +591,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
-  - Assets/Scenes/Main Menu.unity
-  - Assets/Scenes/Game Scene.unity
-  playerPath: C:/Unity/Projects/Brackeys Jam 2020.2/Builds/Windows/Brackeys Jam 2020.2.exe
+  - Assets/Scenes/Bg.unity
+  playerPath: C:/Unity/Projects/Brackeys Jam 2020.2/Builds/BG/Meme Rewind.exe

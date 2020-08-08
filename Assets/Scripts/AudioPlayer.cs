@@ -5,13 +5,15 @@ public class AudioPlayer : MonoBehaviour
 {
     public AudioSource audioSource;
 
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayAudio(AudioClip audioClip)
     {
+        StopAudio();
+
         audioSource.pitch = 1;
         audioSource.clip = audioClip;
         audioSource.Play();
@@ -19,6 +21,8 @@ public class AudioPlayer : MonoBehaviour
     }
     public void PlayReverseAudio(AudioClip audioClip)
     {
+        StopAudio();
+        
         audioSource.pitch = -1;
         audioSource.loop = true;
         audioSource.clip = audioClip;
@@ -27,6 +31,8 @@ public class AudioPlayer : MonoBehaviour
     }
     public void PlayLoopAudio(AudioClip audioClip)
     {
+        StopAudio();
+
         audioSource.loop = true;
         audioSource.pitch = 1;
         audioSource.clip = audioClip;
@@ -42,7 +48,7 @@ public class AudioPlayer : MonoBehaviour
 
     public IEnumerator StopLoop()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         audioSource.loop = false;
     }
 }
